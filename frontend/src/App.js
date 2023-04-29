@@ -3,6 +3,7 @@ import './App.css';
 import Tweet from './components/Tweet';
 import TweetPost from './components/TweetPost';
 import { useEffect, useState } from 'react';
+import Wowo from './components/Wowo'
 
 function App() {
   const [tweets, setTweets] = useState([])  
@@ -35,12 +36,15 @@ function App() {
 
   return (
     <div className="App">
+      <Wowo/>
       <TweetPost/>
       <div className='mx-auto col-11 col-sm-9 col-md-7 col-lg-6'>
         {tweets.map((tweet, i) => {
           return <Tweet key={tweet.id} user={tweet.user} createdAt={tweet.created_at} tweet={tweet.text} img={tweet.img}/>
         })}
       </div>
+
+
     </div>
   );
 }
